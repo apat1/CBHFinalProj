@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LogoutControl.ascx.cs" Inherits="CBHProject.LogoutControl" %>
+<asp:HyperLink ID="linkLogout" runat="server" NavigateUrl="~/Login.aspx">Log out</asp:HyperLink>

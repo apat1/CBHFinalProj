@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CBHProject.Site1" %>
+<%@ Register TagPrefix="logout" TagName="link" Src="LogoutControl.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Crescent Bay Holdings</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 182px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div align="right" style="padding:0px 4px 0px 0px">
+            <logout:link id="pageLogout" runat="server" />
+        </div>
+        <div class="container">
+          <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <a class="brand" href="#">Crescent Bay Holdings</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span12">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="style1">
+                            <asp:Menu ID="NavigationMenu" runat="server"  EnableViewState="false" 
+                                IncludeStyleBlock="false"
+                                CssClass="sidebar-nav-fixed"
+                                StaticMenuStyle-CssClass= "nav"
+                                StaticSelectedStyle-CssClass="active">
+                                  <LevelMenuItemStyles>
+                                    <asp:MenuItemStyle CssClass="nav"/>
+                                  </LevelMenuItemStyles>
+                                <Items>
+                                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                    <asp:MenuItem NavigateUrl="~/Default2.aspx" Text="Market Data" />
+                                    <asp:MenuItem NavigateUrl="~/Admin/Manage.aspx" Text="Project Management" />
+                                </Items>
+                            </asp:Menu>
+                        </td>
+                        <td>
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server" />    
+                        </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script type="text/javascript"  src='<%# ResolveUrl ("~/Js/jquery-1.2.3.min.js") %>'></script>
+
+    <script src="js/bootstrap.min.js"></script> 
+</body>
+</html>
